@@ -16,3 +16,10 @@
 	- Manages lifespan of portals and makes sure there is only two  
 	- Handles traversal of objects through the portals  
 - Attach portal manager class to empty game object in the scene
+
+  #### 9/18/2024
+
+  **Ethan**
+  - Added portal asset with rigidbody and collision
+    	- [Magic Effects FREE by Hovl Studio] (https://assetstore.unity.com/packages/vfx/particles/spells/magic-effects-free-247933)
+  - Create empty game object called "PortalManager" and add the PortalManager script to it
