@@ -23,3 +23,10 @@
   - Added portal asset with rigidbody and collision
     	- [Magic Effects FREE by Hovl Studio] (https://assetstore.unity.com/packages/vfx/particles/spells/magic-effects-free-247933)
   - Create empty game object called "PortalManager" and add the PortalManager script to it
+
+#### 9/19/2024
+
+**Parker**
+- Added portal placement to the character controller
+	- Added collision checking so player can't place portals inside colliders.
+- Created empty game object that is a child of the player, object's transform determines where portal is placed.  
