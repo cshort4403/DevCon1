@@ -11,13 +11,30 @@ public class PortalPlacement : MonoBehaviour
 
     private float nextPlacementTime = 0f; // Variable for resetting placement time
 
+    public bool canPlace; // Bool check for collisions
+
+    void OnTriggerExit(Collider other) // When not colliding
+    {
+        Debug.Log("Able to place portal");
+        canPlace = true; 
+    }
+
+    void OnTriggerEnter(Collider other) // When colliding
+    {
+        Debug.Log("Cannot place portal");
+        canPlace = false;
+    }
+
     void Update()
     {
-        // Check for player input and placement time
-        if (Input.GetButton("Fire1") && Time.time >= nextPlacementTime) 
+        if (canPlace == true) // Collision check
         {
-            nextPlacementTime = Time.time + placementRate; // Prevents player from placing until next placement time
-            Place();
+            // Checks if enough time has passed since the last placement
+            if (Input.GetButton("Fire1") && Time.time >= nextPlacementTime)
+            {
+                nextPlacementTime = Time.time + placementRate; // Sets a cooldown period for how often the player can place 
+                Place();
+            }
         }
     }
 
