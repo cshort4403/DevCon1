@@ -20,7 +20,7 @@ public class PortalManager : MonoBehaviour
 
     //Queue of portals active in the game using a first in first out approach
     [SerializeField]
-    public Queue<GameObject> portalQueue = new Queue<GameObject>();
+    private Queue<GameObject> portalQueue = new Queue<GameObject>();
 
    
 
@@ -42,14 +42,14 @@ public class PortalManager : MonoBehaviour
     {
         if(portalQueue.Count < 2)
         {
-            Instantiate(portalPrefab, transform);
-            portalQueue.Enqueue(portalPrefab);
+            GameObject p = Instantiate(portalPrefab, transform.position, transform.rotation);
+            portalQueue.Enqueue(p);
         }
         else
         {
             DestroyPortal(portalQueue.Peek());
-			Instantiate(portalPrefab, transform);
-			portalQueue.Enqueue(portalPrefab);
+			GameObject p = Instantiate(portalPrefab, transform.position, transform.rotation);
+			portalQueue.Enqueue(p);
 		}
     }
     /// <summary>
@@ -58,9 +58,9 @@ public class PortalManager : MonoBehaviour
     /// <param name="portal"></param>
     public void DestroyPortal(GameObject portal)
     {
-        portal.SendMessage("OnDestroy");
         portalQueue.Dequeue();
-    }
+        Destroy(portal);
+	}
     
     /// <summary>
     /// Call this from the OnCollisionEnter method in the portal prefab. <paramref name="portal"/> 
@@ -72,20 +72,22 @@ public class PortalManager : MonoBehaviour
     {
         if (!portalQueue.Contains(portal))
         {
-            Console.Error.WriteLine("The portal you entered is not managed properly or doesn't exist!");
+            Debug.LogError("The portal you entered is not managed properly or doesn't exist!");
         }
 
-        if(portalQueue.First() == portal)
+        if(portalQueue.First().transform.position == portal.transform.position)
         {
+            Debug.Log("Entered First Portal");
             other.transform.position = portalQueue.Last().transform.position;
         }
-        else if (portalQueue.Last() == portal)
+        else if (portalQueue.Last().transform.position == portal.transform.position)
         {
+            Debug.Log("Entered Last portal");
 			other.transform.position = portalQueue.First().transform.position;
 		}
         else
         {
-			Console.Error.WriteLine("The portal you entered is not first or last in the queue! (It should be)");
+			Debug.LogError("The portal you entered is not first or last in the queue! (It should be)");
 		}
 
         //TODO: Add velocity leaving the portal so you do not immediatly go back through

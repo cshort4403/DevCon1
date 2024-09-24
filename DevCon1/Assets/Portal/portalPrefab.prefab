@@ -9691,6 +9691,7 @@ GameObject:
   - component: {fileID: 7142952602370353173}
   - component: {fileID: 279020828215151325}
   - component: {fileID: 7177122649107899235}
+  - component: {fileID: 5834960596026128047}
   m_Layer: 0
   m_Name: portalPrefab
   m_TagString: Untagged
@@ -14613,12 +14614,26 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 0.05}
   m_Center: {x: 0, y: 0.00050002337, z: 0}
+--- !u!114 &5834960596026128047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690740500594796141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb4f82058cb4a64f8791e0e247e7fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalManager: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!1 &4657650869341777928
 GameObject:
   m_ObjectHideFlags: 0

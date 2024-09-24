@@ -30,3 +30,10 @@
 - Added portal placement to the character controller
 	- Added collision checking so player can't place portals inside colliders.
 - Created empty game object that is a child of the player, object's transform determines where portal is placed.  
+
+#### 9/23/2024
+
+**Chris**
+- Merge portal placement into main and create testing logic branch to bring it all together
+- Fixed bug where portals were not deleting.
+

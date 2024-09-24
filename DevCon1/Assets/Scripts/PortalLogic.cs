@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class PortalLogic : MonoBehaviour
 {
-    [SerializeField]
-    public GameObject portalManager;
+	[SerializeField]
+	private PortalManager pManager;
+	public PortalManager portalManager
+	{ get { return pManager; } set { pManager = portalManager; } }
 
-    [SerializeField]
-    private GameObject portal;
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
-        portal = this.gameObject;
+        pManager = GameObject.FindGameObjectWithTag("PortalManager").GetComponent<PortalManager>();
 
-        if(portalManager == null)
+        if(pManager == null)
         {
             Console.Error.WriteLine("No portal manager attached to portal prefab");
         }
@@ -29,7 +29,14 @@ public class PortalLogic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        portalManager.GetComponent<PortalManager>().EnterPortal(portal, other.gameObject);
+		if (other.gameObject.CompareTag("Player"))
+        {
+            pManager.EnterPortal(gameObject, other.gameObject);
+        }
     }
 
+	private void OnDestroy()
+	{
+        Destroy(gameObject);
+	}
 }

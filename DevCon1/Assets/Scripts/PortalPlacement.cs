@@ -5,7 +5,13 @@ using Cinemachine;
 
 public class PortalPlacement : MonoBehaviour
 {
-    public GameObject portalPrefab; // The portal prefab
+
+    [SerializeField]
+    private PortalManager pManager;
+	public PortalManager portalManager
+	{ get { return pManager; } set { pManager = portalManager; } }
+
+	//public GameObject portalPrefab; // The portal prefab [No longer needed with portalManager class]
     public Transform placementPoint; // The point from where the portal will be placed
     public float placementRate = 0.5f; // Time between placing portals 
 
@@ -39,11 +45,16 @@ public class PortalPlacement : MonoBehaviour
     }
 
     private void Place()
-    {
-        if (portalPrefab != null) // Exception Check
-        {
-            // Instantiate the portal
-            GameObject portal = Instantiate(portalPrefab, placementPoint.position, placementPoint.rotation);
-        }
+    { 
+        pManager.SpawnPortal(placementPoint);
+
+        //[Obsolete with portalManager class
+
+        //if (portalPrefab != null) // Exception Check
+        //{
+        //    // Instantiate the portal
+           
+        //    //GameObject portal = Instantiate(portalPrefab, placementPoint.position, placementPoint.rotation);
+        //}
     }
 }
