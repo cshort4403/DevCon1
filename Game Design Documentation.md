@@ -47,3 +47,13 @@
 - Implemented post-processing
 - Added electricity effect to character
 
+#### 9/24/2024
+
+**Chris**
+- Fixed portal not teleporting bug by disabling character controller during transit  
+- Added cooldown timer for teleport so that the player does not get stuck in an infinite loop  
+
+
+
+
+
