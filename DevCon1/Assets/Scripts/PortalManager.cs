@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 /// <summary>
 /// Class to manage the lifetime of the portals
 /// </summary>
@@ -22,7 +23,15 @@ public class PortalManager : MonoBehaviour
     [SerializeField]
     private Queue<GameObject> portalQueue = new Queue<GameObject>();
 
-   
+    /// <summary>
+    /// The amount of time between teleports in milliseconds
+    /// </summary>
+    public float PortalCooldown = 200;
+
+    private float TimeSinceLastTeleport = 0;
+
+    private bool CanTeleport = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +43,26 @@ public class PortalManager : MonoBehaviour
         //Portal must have a rigid body component!
         rb = portalPrefab.GetComponent<Rigidbody>();
     }
-    /// <summary>
-    /// Make a portal appear at a specified location, position, and scale.
-    /// </summary>
-    /// <param name="transform"></param>
-    public void SpawnPortal(Transform transform)
+
+	public void Update()
+	{
+		if(PortalCooldown > TimeSinceLastTeleport && CanTeleport == false)
+        {
+            TimeSinceLastTeleport += Time.deltaTime;
+        }
+        else
+        {
+            CanTeleport = true;
+        }
+
+
+	}
+
+	/// <summary>
+	/// Make a portal appear at a specified location, position, and scale.
+	/// </summary>
+	/// <param name="transform"></param>
+	public void SpawnPortal(Transform transform)
     {
         if(portalQueue.Count < 2)
         {
@@ -70,25 +94,31 @@ public class PortalManager : MonoBehaviour
     /// <param name="other"></param>
     public void EnterPortal(GameObject portal, GameObject other)
     {
-        if (!portalQueue.Contains(portal))
+        if (CanTeleport)
         {
-            Debug.LogError("The portal you entered is not managed properly or doesn't exist!");
-        }
+            if (!portalQueue.Contains(portal))
+            {
+                Debug.LogError("The portal you entered is not managed properly or doesn't exist!");
+            }
 
-        if(portalQueue.First().transform.position == portal.transform.position)
-        {
-            Debug.Log("Entered First Portal");
-            other.transform.position = portalQueue.Last().transform.position;
+            if (portalQueue.First().transform.position == portal.transform.position)
+            {
+                Debug.Log("Entered First Portal");
+                other.transform.position = portalQueue.Last().transform.position;
+            }
+            else if (portalQueue.Last().transform.position == portal.transform.position)
+            {
+                Debug.Log("Entered Last portal");
+                other.transform.position = portalQueue.First().transform.position;
+            }
+            else
+            {
+                Debug.LogError("The portal you entered is not first or last in the queue! (It should be)");
+            }
+
+            TimeSinceLastTeleport = 0;
+            CanTeleport = false;
         }
-        else if (portalQueue.Last().transform.position == portal.transform.position)
-        {
-            Debug.Log("Entered Last portal");
-			other.transform.position = portalQueue.First().transform.position;
-		}
-        else
-        {
-			Debug.LogError("The portal you entered is not first or last in the queue! (It should be)");
-		}
 
         //TODO: Add velocity leaving the portal so you do not immediatly go back through
 

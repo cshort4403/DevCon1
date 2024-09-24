@@ -27,11 +27,19 @@ public class PortalLogic : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// When some object <paramref name="other"/> collides with the portal.
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
 		if (other.gameObject.CompareTag("Player"))
         {
+            //The character controller does not like to be teleported around, so turn it off before moving player
+            CharacterController cc = other.GetComponent<CharacterController>();
+            cc.enabled = false;
             pManager.EnterPortal(gameObject, other.gameObject);
+            cc.enabled = true;
         }
     }
 
