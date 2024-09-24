@@ -36,4 +36,5 @@
 **Chris**
 - Merge portal placement into main and create testing logic branch to bring it all together
 - Fixed bug where portals were not deleting.
+- Portals place properly but there is a bug moving the player.
 
