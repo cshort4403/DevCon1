@@ -21,7 +21,7 @@
 
   **Ethan**
   - Added portal asset with rigidbody and collision
-    	- [Magic Effects FREE by Hovl Studio] (https://assetstore.unity.com/packages/vfx/particles/spells/magic-effects-free-247933)
+    	- [Magic Effects FREE by Hovl Studio](https://assetstore.unity.com/packages/vfx/particles/spells/magic-effects-free-247933)
   - Create empty game object called "PortalManager" and add the PortalManager script to it
 
 #### 9/19/2024
@@ -37,4 +37,13 @@
 - Merge portal placement into main and create testing logic branch to bring it all together
 - Fixed bug where portals were not deleting.
 - Portals place properly but there is a bug moving the player.
+
+#### 9/23/2024
+
+**Ethan**
+- Started designing the map and created a "tutorial" level with the following packs
+- [Destroyed Building Kit - Demo by Loknar Studio](https://assetstore.unity.com/packages/3d/environments/destroyed-building-kit-demo-174899)
+- [Flooded Grounds by Sandro T](https://assetstore.unity.com/packages/3d/environments/flooded-grounds-48529)
+- Implemented post-processing
+- Added electricity effect to character
 
