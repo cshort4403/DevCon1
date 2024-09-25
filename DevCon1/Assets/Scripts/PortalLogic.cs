@@ -41,6 +41,10 @@ public class PortalLogic : MonoBehaviour
             pManager.EnterPortal(gameObject, other.gameObject);
             cc.enabled = true;
         }
+        else if (other.gameObject.CompareTag("PortableItems"))
+        {
+            pManager.EnterPortal(gameObject, other.gameObject);
+        }
     }
 
 	private void OnDestroy()

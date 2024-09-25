@@ -53,7 +53,10 @@
 - Fixed portal not teleporting bug by disabling character controller during transit  
 - Added cooldown timer for teleport so that the player does not get stuck in an infinite loop  
 
+#### 9/25/2024
 
-
+**Parker**
+- Added our puzzle concepts to the map for the purposes of testing our player experience
+	- Added "Plinko" puzzle
 
 
