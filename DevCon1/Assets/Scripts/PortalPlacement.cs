@@ -19,7 +19,8 @@ public class PortalPlacement : MonoBehaviour
 
     public bool canPlace; // Bool check for collisions
 
-    void OnTriggerExit(Collider other) // When not colliding
+
+	void OnTriggerExit(Collider other) // When not colliding
     {
         Debug.Log("Able to place portal");
         canPlace = true; 
@@ -43,10 +44,17 @@ public class PortalPlacement : MonoBehaviour
             }
         }
     }
+	private void Place()
+    {
+        Vector3 _startPos = Camera.main.transform.position;
+        Vector3 _startDir = Camera.main.transform.forward;
 
-    private void Place()
-    { 
-        pManager.SpawnPortal(placementPoint);
+        RaycastHit _HitInfo;
+
+		if (Physics.Raycast(_startPos, _startDir, out _HitInfo, 100.0f))
+        {
+			pManager.SpawnPortal(_HitInfo.point, Quaternion.FromToRotation(-Vector3.forward, _HitInfo.normal));
+        }
 
         //[Obsolete with portalManager class
 

@@ -45,7 +45,7 @@ public class SwitchCamera : MonoBehaviour
 			IsFirstPerson = false;
         }
 
-        FirstPersonCamera.transform.rotation = _player.transform.rotation;
+        //FirstPersonCamera.transform.rotation = _player.transform.rotation;
 
     }
 }
