@@ -66,4 +66,5 @@
 - Added rotating the portal to the normal of the target
 - Added offset so portal no longer clips into the wall
 - Fixed bugs
+- Added git lfs to track .tif files
 
