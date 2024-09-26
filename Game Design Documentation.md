@@ -53,7 +53,11 @@
 - Fixed portal not teleporting bug by disabling character controller during transit  
 - Added cooldown timer for teleport so that the player does not get stuck in an infinite loop  
 
+#### 9/25/2024
 
+**Ethan**
+- Implemented place portal animation from [Mixamo](https://www.mixamo.com/#/)
+- Created audio source sound effect for placing a portal [Freesound](https://freesound.org/people/User391915396/sounds/683828/)
 
 
 
