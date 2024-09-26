@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3399477584991782887}
   - component: {fileID: 2163132217290809185}
   - component: {fileID: 3480161627358287070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CircleSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4850,7 +4850,7 @@ GameObject:
   - component: {fileID: 4108399899964784683}
   - component: {fileID: 4251346489504422583}
   - component: {fileID: 3033465414749270601}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9692,7 +9692,7 @@ GameObject:
   - component: {fileID: 279020828215151325}
   - component: {fileID: 7177122649107899235}
   - component: {fileID: 5834960596026128047}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: portalPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14618,8 +14618,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.05}
-  m_Center: {x: 0, y: 0.00050002337, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.2664177}
+  m_Center: {x: 0, y: 0.00050002337, z: -0.0067141205}
 --- !u!114 &5834960596026128047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14644,7 +14644,7 @@ GameObject:
   - component: {fileID: 3483945725444622357}
   - component: {fileID: 8016934428037813555}
   - component: {fileID: 8780017448104739543}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -53,7 +53,13 @@
 - Fixed portal not teleporting bug by disabling character controller during transit  
 - Added cooldown timer for teleport so that the player does not get stuck in an infinite loop  
 
+#### 9/26/2024
 
+**Chris**
+- Added Raycasting to place the portal based on camera.  
+- Rotate portal based on target normal.  
+- Added first person mode by right-clicking.  
+- Fixed bugs.  
 
 
 
