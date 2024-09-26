@@ -58,5 +58,6 @@
 **Parker**
 - Added our puzzle concepts to the map for the purposes of testing our player experience
 	- Added "Plinko" puzzle
+	- Added moving platform challenge
 
 
