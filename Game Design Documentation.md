@@ -59,5 +59,11 @@
 - Implemented place portal animation from [Mixamo](https://www.mixamo.com/#/)
 - Created audio source sound effect for placing a portal [Freesound](https://freesound.org/people/User391915396/sounds/683828/)
 
+#### 9/26/2024
 
+**Chris**
+- Added raycasting to place the portal
+- Added rotating the portal to the normal of the target
+- Added offset so portal no longer clips into the wall
+- Fixed bugs
 
