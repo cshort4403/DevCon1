@@ -68,3 +68,8 @@
 - Fixed bugs
 - Added git lfs to track .tif files
 
+**Parker**
+- Added the GDD to repository
+  - Detailed out our game mechanic, objective statement, design rationale, and resources
+  - Formatted it as a markdown file
+
