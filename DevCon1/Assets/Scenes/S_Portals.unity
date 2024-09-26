@@ -524,6 +524,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0662a71e973222c4385b5f1b6cc885cf, type: 3}
+--- !u!1 &80351873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: b3ab048af98da574b802a5384a1b060c, type: 3}
+  m_PrefabInstance: {fileID: 1898170763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &83660036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0f4723795d62ce3499ef5af71b3d4419, type: 3}
@@ -7677,6 +7682,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b3ab048af98da574b802a5384a1b060c, type: 3}
   m_PrefabInstance: {fileID: 1898170763}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &1839711839
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80351873}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: b3ab048af98da574b802a5384a1b060c, type: 3}
 --- !u!4 &1848195731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 641088feff09d78469dc6f50b1089118, type: 3}
@@ -7836,7 +7863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b3ab048af98da574b802a5384a1b060c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 258.34476
+      value: 258.05
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b3ab048af98da574b802a5384a1b060c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7873,7 +7900,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: b3ab048af98da574b802a5384a1b060c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1839711839}
   m_SourcePrefab: {fileID: 100100000, guid: b3ab048af98da574b802a5384a1b060c, type: 3}
 --- !u!4 &1910376895 stripped
 Transform:
