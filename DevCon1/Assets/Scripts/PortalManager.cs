@@ -62,17 +62,17 @@ public class PortalManager : MonoBehaviour
 	/// Make a portal appear at a specified location, position, and scale.
 	/// </summary>
 	/// <param name="transform"></param>
-	public void SpawnPortal(Transform transform)
+	public void SpawnPortal(Vector3 pLocation, Quaternion pRotation)
     {
         if(portalQueue.Count < 2)
         {
-            GameObject p = Instantiate(portalPrefab, transform.position, transform.rotation);
+            GameObject p = Instantiate(portalPrefab, pLocation, pRotation);
             portalQueue.Enqueue(p);
         }
         else
         {
             DestroyPortal(portalQueue.Peek());
-			GameObject p = Instantiate(portalPrefab, transform.position, transform.rotation);
+			GameObject p = Instantiate(portalPrefab, pLocation, pRotation);
 			portalQueue.Enqueue(p);
 		}
     }
@@ -104,12 +104,12 @@ public class PortalManager : MonoBehaviour
             if (portalQueue.First().transform.position == portal.transform.position)
             {
                 Debug.Log("Entered First Portal");
-                other.transform.position = portalQueue.Last().transform.position;
+                other.transform.position = portalQueue.Last().transform.position + Vector3.down * 0.5f;
             }
             else if (portalQueue.Last().transform.position == portal.transform.position)
             {
                 Debug.Log("Entered Last portal");
-                other.transform.position = portalQueue.First().transform.position;
+                other.transform.position = portalQueue.First().transform.position + Vector3.down * 0.5f;
             }
             else
             {
