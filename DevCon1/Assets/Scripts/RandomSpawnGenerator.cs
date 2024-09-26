@@ -28,11 +28,9 @@ public class RandomSpawnGenerator : MonoBehaviour
         // Generate a random offset within the specified range
         Vector3 randomOffset = new Vector3(Random.Range(-spawnOffset.x, spawnOffset.x), Random.Range(-spawnOffset.y, spawnOffset.y), Random.Range(-spawnOffset.z, spawnOffset.z));
 
-        // Calculate the final spawn position
-        Vector3 finalSpawnPosition = spawnPosition + randomOffset;
+        Vector3 finalSpawnPosition = spawnPosition + randomOffset; // Calculate the final spawn position
 
-        // Instantiate the prefab at the newly calculated position
-        Instantiate(prefabToSpawn, finalSpawnPosition, Quaternion.identity);
+        Instantiate(prefabToSpawn, finalSpawnPosition, Quaternion.identity); // Instantiate the prefab at the newly calculated position
     }
 
 }
